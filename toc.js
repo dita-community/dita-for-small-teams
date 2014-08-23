@@ -9,13 +9,27 @@
       var root = tree.getRoot();
 
       
-var objd66e60 = {
+var objd66e81 = {
   label: " DITA For Small Teams",
   href: "topics/dita-for-small-teams.html", 
   target:"contentwin"
 };
-var d66e60 = new YAHOO.widget.TextNode(objd66e60, root, false);
-var d74e3 = new YAHOO.widget.TextNode("Index", root, false);
+var d66e81 = new YAHOO.widget.TextNode(objd66e81, root, false);
+
+var objd66e108 = {
+  label: " DITA for Small Teams Tools",
+  href: "topics/dfst-tools.html", 
+  target:"contentwin"
+};
+var d66e108 = new YAHOO.widget.TextNode(objd66e108, d66e81, false);
+
+var objd66e135 = {
+  label: " git: Distributed and Shared Access to Content",
+  href: "topics/tools-git.html", 
+  target:"contentwin"
+};
+var d66e135 = new YAHOO.widget.TextNode(objd66e135, d66e108, false);
+var d76e3 = new YAHOO.widget.TextNode("Index", root, false);
 
       
       tree.draw(); 
