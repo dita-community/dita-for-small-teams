@@ -29,7 +29,14 @@ var objd66e135 = {
   target:"contentwin"
 };
 var d66e135 = new YAHOO.widget.TextNode(objd66e135, d66e108, false);
-var d76e3 = new YAHOO.widget.TextNode("Index", root, false);
+
+var objd66e162 = {
+  label: " eXist-db: Enabling Search and Link Management",
+  href: "topics/tools-exist-db.html", 
+  target:"contentwin"
+};
+var d66e162 = new YAHOO.widget.TextNode(objd66e162, d66e108, false);
+var d77e3 = new YAHOO.widget.TextNode("Index", root, false);
 
       
       tree.draw(); 

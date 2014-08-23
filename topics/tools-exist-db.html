@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<meta name="DC.Type" content="topic"></meta>
+<meta name="DC.Title" content="eXist-db: Enabling Search and Link Management"></meta>
+<meta name="abstract" content="The eXist-db system is an XQuery-based XML database that provides powerful search features for XML."></meta>
+<meta name="description" content="The eXist-db system is an XQuery-based XML database that provides powerful search features for XML."></meta>
+<meta name="DC.Relation" scheme="URI" content="dfst-tools.html"></meta>
+<meta name="DC.Creator" content="W. Eliot Kimber"></meta>
+<meta name="copyright" content="W. Eliot Kimber 2014" type="primary"></meta>
+<meta name="DC.Rights.Owner" content="W. Eliot Kimber 2014" type="primary"></meta>
+<meta name="DC.Date.Created" content="2014-08-23"></meta>
+<meta name="DC.Date.Modified" content="2014-08-23"></meta>
+<meta name="DC.Format" content="XHTML"></meta>
+<meta name="DC.Identifier" content="topic_qx1_q4s_2p"></meta>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"></link>
+<title>eXist-db: Enabling Search and Link Management</title>
+</head>
+<body id="topic_qx1_q4s_2p">
+
+
+  <h1 class="title topictitle1">eXist-db: Enabling Search and Link Management</h1>
+  
+  <div class="body"><p class="shortdesc">The eXist-db system is an XQuery-based XML database that provides powerful search features for XML.</p>
+
+    <p class="p">In the DITA for Small Teams model the eXist-db database is used only to enable search and link management. It is <strong class="ph b">not</strong> used as the source repository for the DITA content, as it doesn't provide the necessary version management features.</p>
+
+    <p class="p">DITA content is loaded to eXist-db through the use of git commit hooks (provided by the DITA for Small Teams project) that load the DITA content to the eXist repository whenever it is committed to the git repository. These commit hooks keep the eXist repository in sync with the main content repository.</p>
+
+    <p class="p">One challenge with using eXist-db and similar databases (such as MarkLogic), is that they are not DTD-aware in the way they store the XML content. That means that the DITA @class and @domains attributes (and other defaulted attributes) that are essential to DITA processing and that are almost always provided through DTDs or other grammars, must be made explicit in the content as stored in eXist. This requires using a particular mechanism for loading content to the repository.</p>
+
+    <p class="p">The eXist database can be configured to turn validation on or off. Unfortunately, there is a limitation when using Tomcat to serve the eXist Web application, such that it cannot use catalogs that are outside the scope of the eXist Web application. Thus, even if you configure eXists's validation to use the master entity catalog managed by a DITA Open Toolkit, if that Toolkit is outside the scope of the eXist Web application, it will not be used by the eXist xmldb:store() function.</p>
+
+    <p class="p">One solution is to turn validation off for the repository and use the eXist-specific valdiation:jaxp-parse() function to parse the document with respect to the DTD as this function will use an OT-managed catalog and then provide the resulting parsed document to the xmldb:store() function. This will result in expanded attributes in the DITA content as stored in eXist.</p>
+
+    <p class="p">Another solution is to deploy the Open Toolkit into the eXist Tomcat Web application so that Tomcat can resolve references to the catalog (WEK: Note that I haven't tested this solution as of 23 Aug 2014).</p>
+
+  </div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="dfst-tools.html" title="What tools to use for small-team DITA management.">DITA for Small Teams Tools</a></div>
+</div>
+</div>
+
+</body>
+</html>
