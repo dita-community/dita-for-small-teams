@@ -9,34 +9,34 @@
       var root = tree.getRoot();
 
       
-var objd66e81 = {
+var objd62e81 = {
   label: " DITA For Small Teams",
   href: "topics/dita-for-small-teams.html", 
   target:"contentwin"
 };
-var d66e81 = new YAHOO.widget.TextNode(objd66e81, root, false);
+var d62e81 = new YAHOO.widget.TextNode(objd62e81, root, false);
 
-var objd66e108 = {
+var objd62e106 = {
   label: " DITA for Small Teams Tools",
   href: "topics/dfst-tools.html", 
   target:"contentwin"
 };
-var d66e108 = new YAHOO.widget.TextNode(objd66e108, d66e81, false);
+var d62e106 = new YAHOO.widget.TextNode(objd62e106, d62e81, false);
 
-var objd66e135 = {
+var objd62e131 = {
   label: " git: Distributed and Shared Access to Content",
   href: "topics/tools-git.html", 
   target:"contentwin"
 };
-var d66e135 = new YAHOO.widget.TextNode(objd66e135, d66e108, false);
+var d62e131 = new YAHOO.widget.TextNode(objd62e131, d62e106, false);
 
-var objd66e162 = {
+var objd62e156 = {
   label: " eXist-db: Enabling Search and Link Management",
   href: "topics/tools-exist-db.html", 
   target:"contentwin"
 };
-var d66e162 = new YAHOO.widget.TextNode(objd66e162, d66e108, false);
-var d77e3 = new YAHOO.widget.TextNode("Index", root, false);
+var d62e156 = new YAHOO.widget.TextNode(objd62e156, d62e106, false);
+var d73e3 = new YAHOO.widget.TextNode("Index", root, false);
 
       
       tree.draw(); 
