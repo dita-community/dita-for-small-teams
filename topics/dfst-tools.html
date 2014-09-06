@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+<meta name="DC.Type" content="topic"></meta>
+<meta name="DC.Title" content="DITA for Small Teams Tools"></meta>
+<meta name="abstract" content="What tools to use for small-team DITA management."></meta>
+<meta name="description" content="What tools to use for small-team DITA management."></meta>
+<meta name="DC.Relation" scheme="URI" content="dita-for-small-teams.html"></meta>
+<meta name="DC.Relation" scheme="URI" content="tools-git.html"></meta>
+<meta name="DC.Relation" scheme="URI" content="tools-exist-db.html"></meta>
+<meta name="DC.Creator" content="W. Eliot Kimber"></meta>
+<meta name="copyright" content="W. Eliot Kimber 2014" type="primary"></meta>
+<meta name="DC.Rights.Owner" content="W. Eliot Kimber 2014" type="primary"></meta>
+<meta name="DC.Date.Created" content="2014-08-23"></meta>
+<meta name="DC.Date.Modified" content="2014-08-23"></meta>
+<meta name="DC.Format" content="XHTML"></meta>
+<meta name="DC.Identifier" content="topic_ahw_l2s_2p"></meta>
+<link rel="stylesheet" type="text/css" href="../commonltr.css"></link>
+<title>DITA for Small Teams Tools</title>
+</head>
+<body id="topic_ahw_l2s_2p">
+
+
+  <h1 class="title topictitle1">DITA for Small Teams Tools</h1>
+  
+  <div class="body"><p class="shortdesc">What tools to use for small-team DITA management.</p>
+
+    <p class="p">For each of the functional areas there are several tools to choose from and the tools you choose may depend as much on what you already have available or what you're already familiar with. The tools presented here represent one possible set.</p>
+
+    <div class="p">The base DFST tool set is:<ul class="ul" id="topic_ahw_l2s_2p__ul_zkr_1fs_2p">
+      <li class="li">For distributed and shared access to versioned content: A version control system like git, Subversion, or Mercurial. This document recommends git if you need to make a choice. Git, in particular, has features that make distributed collaboration easier and there are many free services, such as <a class="xref" href="http://github.com" target="_blank">github</a> and <a class="xref" href="https://bitbucket.org" target="_blank">BitBucket</a>, that provide free or low-cost git repositories along with other collaboration features, such as issue trackers and wikis. It is also easy to set up a central shared git repository within an organization.</li>
+
+      <li class="li">Deliverable production: A continuous integration (<dfn class="term">CI</dfn>) system like Jenkins for automating the production of deliverables when updates are committed to the content repository. This document uses Jenkins through <a class="xref" href="http://www.cloudbees.com" target="_blank">CloudBees</a>.<p class="p">As for git, there are free and low-cost services like <a class="xref" href="http://www.cloudbees.com" target="_blank">CloudBees</a> that provide Jenkins servers or you can quickly set up a Jenkins server on an internal machine. For more robust systems you can use services like Amazon Web Services to set up private servers in the cloud. Production can use the DITA Open Toolkit, ditac, or any other DITA production tools that can be run on the server you're using (which means that Windows-only tools can be a problem unless you set up your own Windows server).</p>
+</li>
+
+      <li class="li">Authoring: oXygenXML, XMetal, Arbortext Editor, or even Adobe Framemaker. None of these are free but they all offer  excellent DITA feature support. This document uses oXygenXML as the editor.</li>
+
+      <li class="li">Link management: A XML-aware database like eXist-db or MarkLogic to make it easy to search across your content using XQuery. This document uses eXist-db because it is open source and easy to install and use. However, any similar XQuery database should work with the link management queries provided here.<p class="p">Note that the XML database is used only to enable search and link management. It is not being used as the primary source repository. That's because it does not provide the version control and repository distribution features of a complete version control system like git or Subversion. So the XML database is really just a search optimization strategy. It's use is, of course, optional and if you're not doing a lot of reuse or have huge amounts of content, it may not be necessary. But the support provided by the DITA for Small Teams project makes it relatively easy to set up and use.</p>
+<p class="p">The DITA for Small Teams project includes an eXist-db Web application that provides basic DITA-specific search and link management features. It also provides git commit hooks for automatically copying your DITA content from your version-controlled authoring repository into the eXist-db database.</p>
+</li>
+
+      </ul>
+</div>
+
+  </div>
+
+  
+<div class="related-links">
+<ul class="ullinks">
+<li class="link ulchildlink"><strong><a href="tools-git.html">git: Distributed and Shared Access to Content</a></strong><br></br>
+The git version control system works well for managing DITA content.</li>
+<li class="link ulchildlink"><strong><a href="tools-exist-db.html">eXist-db: Enabling Search and Link Management</a></strong><br></br>
+The eXist-db system is an XQuery-based XML database that provides powerful search features for XML.</li>
+</ul>
+
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="dita-for-small-teams.html" title="The DITA for Small Teams project demonstrates how to use free and low-cost tools to manage DITA content for authoring and delivery as appropriate for small writing teams.">DITA For Small Teams</a></div>
+</div>
+</div>
+
+</body>
+</html>
